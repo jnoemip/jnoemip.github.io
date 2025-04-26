@@ -1,1 +1,0 @@
-# jnoemip.github.io
