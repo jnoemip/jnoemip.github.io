@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte Técnico | Asistencia 24/7</title>
+    <style>
+        :root {
+            --primary: #4285F4; /* Azul Google */
+            --secondary: #34A853; /* Verde */
+            --dark: #202124;
+            --light: #F8F9FA;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: var(--dark);
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), #1a73e8);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        /* Sección de ayuda */
+        .help-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        
+        .faq-item {
+            margin: 1.5rem 0;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            margin-top: 0.5rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* Formulario de contacto */
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin: 0.5rem 0 1rem 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .contact-form button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .contact-form button:hover {
+            background: #3367d6;
+        }
+        
+        /* Chatbot */
+        df-messenger {
+            --df-messenger-bot-message: var(--primary);
+            --df-messenger-user-message: var(--secondary);
+            --df-messenger-button-titlebar-color: var(--primary);
+            --df-messenger-font-color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">SoporteTec</div>
+        <p>Asistencia técnica especializada 24/7</p>
+    </header>
+    
+    <!-- Contenido principal -->
+    <div class="container">
+        <!-- Sección de preguntas frecuentes -->
+        <section class="help-section">
+            <h2>Preguntas Frecuentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">¿Cómo restablezco mi contraseña?</div>
+                <div class="faq-answer">
+                    Ve a "Configuración de cuenta" > "Seguridad" y haz clic en "Restablecer contraseña". Recibirás un correo con instrucciones.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">¿Qué hago si mi dispositivo no enciende?</div>
+                <div class="faq-answer">
+                    Verifica que esté cargando correctamente. Si el problema persiste, contacta a nuestro equipo de hardware.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">¿Cómo actualizo mi software?</div>
+                <div class="faq-answer">
+                    En Windows/Mac: Ve a "Configuración" > "Actualizaciones". En móviles: Play Store/App Store > "Actualizar".
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección de contacto -->
+        <section class="help-section">
+            <h2>Contacto Directo</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <select style="width: 100%; padding: 0.8rem; margin: 0.5rem 0 1rem 0; border: 1px solid #ddd; border-radius: 5px;">
+                    <option>Selecciona un tema</option>
+                    <option>Hardware</option>
+                    <option>Software</option>
+                    <option>Redes</option>
+                    <option>Otro</option>
+                </select>
+                <textarea placeholder="Describe tu problema..." rows="4" required></textarea>
+                <button type="submit">Enviar solicitud</button>
+            </form>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>© 2023 SoporteTec - Todos los derechos reservados</p>
+        <p>Email: soporte@soportetec.com | Teléfono: +1 234 567 890</p>
+    </footer>
+    
+    <!-- Integración de Dialogflow -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+        intent="WELCOME"
+        chat-title="Asistente Virtual"
+        agent-id="TU-ID-DE-AGENTE"
+        language-code="es"
+    ></df-messenger>
+    
+    <!-- Script para mejorar interactividad -->
+    <script>
+        // Desplegar respuestas FAQ al hacer clic
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
