@@ -101,28 +101,9 @@
             background: #3367d6;
         }
         
-        /* Chatbot */
-        df-messenger {
-            --df-messenger-bot-message: var(--primary);
-            --df-messenger-user-message: var(--secondary);
-            --df-messenger-button-titlebar-color: var(--primary);
-            --df-messenger-font-color: white;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 1.5rem 0;
-            margin-top: 2rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
+      
+
+
         }
     </style>
 </head>
@@ -188,22 +169,13 @@
     
     <!-- Integración de Dialogflow -->
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger
-        intent="WELCOME"
-        chat-title="Asistente Virtual"
-        agent-id="TU-ID-DE-AGENTE"
-        language-code="es"
-    ></df-messenger>
+<df-messenger
+  intent="WELCOME"
+  chat-title="Dagus"
+  agent-id="4f05b69d-081b-42ab-89a9-6328ef697ace"
+  language-code="es"
+></df-messenger>
     
-    <!-- Script para mejorar interactividad -->
-    <script>
-        // Desplegar respuestas FAQ al hacer clic
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-    </script>
+   
 </body>
 </html>
